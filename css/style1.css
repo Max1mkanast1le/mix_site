@@ -1,11 +1,13 @@
 body {
     font-size: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 1448px;
 }
-img
-{
+
+img {
     max-width: 100%;
 }
+
 .mix {
     margin-top: 40px;
     margin-left: 88px;
@@ -14,13 +16,14 @@ img
     font-family: 'cambria', sans-serif;
     transform: translateY(10px);
 }
+
 .loaded .mix {
     transform: translateY(0);
     transition: transform 0.1s ease-out 0s;
 }
 
 .title {
-    margin: 0px;
+    margin: 0;
     font-size: 58px;
     font-weight: bold;
     font-family: 'cambria', sans-serif;
@@ -28,6 +31,7 @@ img
     opacity: 0;
     transform: translateY(100px);
 }
+
 .loaded .title {
     opacity: 1;
     transform: translateY(0);
@@ -35,11 +39,11 @@ img
                 opacity 0.6s ease-out 0.5s;
 }
 
-
 .text {
     opacity: 0;
     transform: translateY(70px);
 }
+
 .loaded .text {
     opacity: 1;
     transform: translateY(0);
@@ -47,15 +51,14 @@ img
                 opacity 0.3s ease-out 1s;
 }
 
-
 .top_menu {
-    
+    display: flex;
+    justify-content: flex-end;
     margin-top: -50px;
-    margin-left: 609px;
     opacity: 0;
     transform: translateY(25px);
-
 }
+
 .loaded .top_menu {
     opacity: 1;
     transform: translateY(0);
@@ -64,16 +67,16 @@ img
 }
 
 .top_menu .menu {
-    display: inline-block;
+    display: flex;
     padding: 0;
     margin: 0;
 }
 
 .top_menu .menu_item {
     text-decoration: none;
+    display: block;
     padding: 0 20px;
     line-height: 80px;
-    display: inline-block;
 }
 
 .menu_link {
@@ -84,15 +87,10 @@ img
     color: #282b30;
 }
 
-.hamburger_item
-{
-    text-decoration: none;
-    padding: 0 20px;
-    line-height: 80px;
+.hamburger_item {
     display: none;
-    height: 80px;
-    width: 80px;
 }
+
 .menu_button {
     display: inline-block;
     border-radius: 30px;
@@ -107,29 +105,28 @@ img
     cursor: pointer;
     outline: none;
     height: 51px;
-    padding-left: 27px;
-    padding-right: 28px;
+    padding: 0 28px;
 }
-.button1 {
+
+.button1, .button2 {
     margin-top: 46px;
-    margin-right: 19px;
     display: inline-block;
     border-radius: 30px;
-    padding-left: 35px;
-    padding-right: 36px;
     line-height: 40px;
-    color: #fff;
-    background-color: #233FE2;
-    box-shadow: none;
-    border: none;
-    font-size: 15px;
     cursor: pointer;
     outline: none;
-    width: 152px;
-    height: 51px;
     opacity: 0;
     transform: translateY(25px);
 }
+
+.button1 {
+    background-color: #233FE2;
+    color: #fff;
+    border: none;
+    width: 152px;
+    height: 51px;
+}
+
 .loaded .button1 {
     opacity: 1;
     transform: translateY(0);
@@ -138,23 +135,14 @@ img
 }
 
 .button2 {
-    margin-top: 46px;
-    display: inline-block;
-    border-radius: 30px;
-    line-height: 40px;
-    color: #000;
     background-color: #fff;
-    box-shadow: none;
+    color: #000;
     border: 1px solid #F29898;
-    font-size: 15px;
-    cursor: pointer;
-    outline: none;
     width: 165px;
     height: 51px;
     font-weight: bold;
-    opacity: 0;
-    transform: translateY(25px);
 }
+
 .loaded .button2 {
     opacity: 1;
     transform: translateY(0);
@@ -162,22 +150,22 @@ img
                 opacity 0.3s ease-out 1.3s;
 }
 
-.order_text_wrapper {
-    display: inline-block;
-    width: 460px;
-    margin-left: 199px;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 140px;
-    vertical-align: middle;
+}
+
+.order_text_wrapper {
+    width: 460px;
 }
 
 .order_picture_wrapper {
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: 120px;
-    margin-left: 70px;
     opacity: 0;
     transform: translateY(300px) scale(0.5);
 }
+
 .loaded .order_picture_wrapper {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -185,13 +173,15 @@ img
                 opacity 0.2s ease-out 1.3s;
 }
 
-
 .bottom_menu {
+    display: flex;
+    justify-content: flex-end;
     margin-top: 185px;
-    margin-left: 410px;
-    transform: translateY(50px);
     opacity: 0;
+    transform: translateY(50px);
+    margin-right: 50px;
 }
+
 .loaded .bottom_menu {
     transform: translateY(0);
     opacity: 1;
@@ -200,178 +190,127 @@ img
 }
 
 .bottom_menu .menu {
-    display: inline-block;
+    display: flex;
     padding: 0;
     margin: 0;
-    text-align: right;
-    margin-right: 87px;
 }
 
 .bottom_menu .menu_item {
     text-decoration: none;
-    padding: 0px;
-    display: inline-block;
     margin-left: 104px;
+    display: block;
 }
 
 .bottom_menu .image {
     width: 80px;
 }
-@media screen and (max-width: 1446px)
-{
-    .top_menu
-    {
-        margin-left: auto;
+
+/* Media Queries */
+@media screen and (max-width: 1446px) {
+    .top_menu {
         margin-right: 50px;
         height: 80px;
     }
-    .top_menu .menu
-    {
-        float: right;
+    .order_picture_wrapper {
+        margin-left: 5vw;
     }
-    .wrapper
-    {
-        display: block;
-        float: right;
-    }
-    .order_text_wrapper
-    {
-        margin-left: 0px;
-        .title
-        {
-            margin-bottom: 2.7vw;
-        }
-        .button1
-        {
-            margin-top: 3.1vw;
-        }
-        .button2
-        {
-            margin-top: 3.1vw;
-        }
-    }
-    
-    .order_picture_wrapper
-    {
-       margin-left: 5vw;
-       
-    }
-    
-    .bottom_menu
-    {
-        margin-left: auto;
-        float: right;
 
-    }
-    .bottom_menu .menu
-    {
-        display: block;
-    }   
 }
-@media screen and (max-width: 1260px)
-{
-    .top_menu
-    {
-        margin-right: 0px;
+
+@media screen and (max-width: 1260px) {
+    .order_picture_wrapper {
+        width: 53vw;
     }
-    .order_picture_wrapper
-    {
-       margin-left: 0px;
-       width: 53vw;
+    .bottom_menu {
+        margin-right: 30px;
     }
-    .bottom_menu .menu
-    {
-        margin-right: 40px;
-    }
-    .bottom_menu .menu_item
-    {
+    .bottom_menu .menu_item {
         margin-left: 70px;
     }
 }
-@media screen and (max-width: 1024px)
-{
-    .top_menu
-    {
+
+@media screen and (max-width: 1024px) {
+    .top_menu {
         margin-top: -80px;
         height: 120px;
     }
-    .top_menu .menu_item
-    {
+
+    .top_menu .menu_item {
         display: none;
     }
-    .hamburger
-    {
-        margin-top: 30px;
-        border: none;
-        background-color: #fff;
-        cursor: pointer;
-    }
-    .hamburger_item
-    {
+
+    .hamburger_item {
         display: inline-block;
         height: 80px;
         width: 80px;
+        margin-top: 20px;
     }
-    .order_text_wrapper
+    .hamburger
     {
+        background-color: #fff;
+        border: none;
+    }
+    .wrapper {
+        margin-top: 70px;
+    }
+    .order_text_wrapper {
         width: 320px;
     }
-    .title
-    {
+
+    .title {
         font-size: 40px;
     }
-    .button1
-    {
+
+    .button1 {
         width: 132px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 0 20px;
     }
-    .bottom_menu
-    {
+
+    .bottom_menu {
         margin-top: 140px;
         width: 100%;
     }
-    .bottom_menu .menu_item
-    {
+
+    .bottom_menu .menu_item {
         margin-left: 45px;
     }
 }
-@media screen and (max-width: 768px)
-{
-    .mix
-    {
+
+@media screen and (max-width: 768px) {
+    .mix {
         margin-left: 10vw;
     }
-    .order_text_wrapper
-    {
-        margin-left: 20vw;
-        margin-top: 2vw;
+    .wrapper {
+        margin-top: 5vw;
+        display: flex;
+        flex-direction: column;
     }
-    .order_picture_wrapper
-    {
+    .top_menu {
+        margin-right: 5vw;
+    }
+
+    .order_picture_wrapper {
         margin-top: 60px;
         width: 100%;
     }
-    .bottom_menu
-    {
+
+    .bottom_menu {
         margin-top: 60px;
     }
-    .bottom_menu .menu
-    {
+
+    .bottom_menu .menu {
         margin-right: 20px;
         margin: 5px;
     }
-    .bottom_menu .menu_item
-    {
+
+    .bottom_menu .menu_item {
         margin-left: 2vw;
         width: 15vw;
     }
 }
-@media screen and (max-width: 480px)
-{
-    .order_text_wrapper
-    {
+
+@media screen and (max-width: 480px) {
+    .order_text_wrapper {
         margin-left: 10vw;
     }
 }
-
